@@ -6,39 +6,39 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 const services = [
   {
     icon: Cog,
-    title: "Precision Manufacturing",
-    description: "State-of-the-art CNC machining and fabrication with tolerances up to ±0.01mm for the most demanding applications.",
-    features: ["CNC Machining", "Metal Fabrication", "3D Printing"],
+    title: "PCB Assembly (PCBA)",
+    description: "Advanced SMT and THT assembly for complex multi-layer boards with fine-pitch components.",
+    features: ["Surface Mount (SMT)", "Through-Hole (THT)", "BGA & QFN Assembly"],
   },
   {
     icon: Truck,
-    title: "Supply Chain Solutions",
-    description: "End-to-end supply chain optimization with just-in-time delivery and inventory management across Europe.",
-    features: ["JIT Delivery", "Inventory Management", "Logistics"],
+    title: "Global Component Sourcing",
+    description: "Strategic procurement of electronic components with verified traceability and obsolescence management.",
+    features: ["Trusted Network", "Obsolescence Mgmt", "Cost Optimization"],
   },
   {
     icon: Shield,
-    title: "Quality Assurance",
-    description: "ISO 9001:2015 certified quality processes with advanced metrology and full traceability.",
-    features: ["ISO Certified", "Metrology Lab", "Full Traceability"],
+    title: "Testing & Validation",
+    description: "Comprehensive electronic testing including AOI, X-Ray, ICT, and functional testing protocols.",
+    features: ["AOI & X-Ray", "In-Circuit Test", "Functional Test"],
   },
   {
     icon: Wrench,
-    title: "Custom Engineering",
-    description: "From concept to production, our engineering team delivers tailored solutions for unique challenges.",
-    features: ["CAD/CAM Design", "Prototyping", "Tooling"],
-  },
-  {
-    icon: BarChart3,
-    title: "Process Optimization",
-    description: "Data-driven manufacturing optimization to reduce costs and improve efficiency.",
-    features: ["Lean Manufacturing", "Industry 4.0", "Analytics"],
+    title: "Embedded Systems Design",
+    description: "Full-cycle electronic engineering support from schematic capture to PCB layout and firmware development.",
+    features: ["PCB Layout", "Firmware Dev", "DFM Analysis"],
   },
   {
     icon: Layers,
-    title: "Assembly & Integration",
-    description: "Complete product assembly with electrical and mechanical integration capabilities.",
-    features: ["Sub-Assembly", "Testing", "Packaging"],
+    title: "Box Build Assembly",
+    description: "Complete electromechanical integration, cable harnessing, and enclosure assembly for finished products.",
+    features: ["Enclosure Assembly", "Cable Harnessing", "Final Packaging"],
+  },
+  {
+    icon: BarChart3,
+    title: "Lifecycle Management",
+    description: "Product lifecycle support including repair, refurbishment, and end-of-life management services.",
+    features: ["Repair Services", "Refurbishment", "E-Waste Compliance"],
   },
 ];
 
@@ -68,7 +68,7 @@ export const ServicesSection = () => {
     <section className="section-padding bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 industrial-grid opacity-30" />
-      
+
       <div className="container-wide relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -79,13 +79,13 @@ export const ServicesSection = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
-              Comprehensive Manufacturing{" "}
-              <span className="text-gradient">Solutions</span>
+              <span className="text-secondary">Comprehensive</span> Manufacturing{" "}
+              Solutions
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From precision components to complete assemblies, we deliver excellence 
+              From precision components to complete assemblies, we deliver excellence
               at every stage of the manufacturing process.
             </p>
           </AnimatedSection>
@@ -107,28 +107,33 @@ export const ServicesSection = () => {
             >
               <Link
                 to="/services"
-                className="block h-full p-8 bg-card rounded-2xl border border-border card-glow"
+                className="block h-full p-8 bg-primary rounded-xl border border-primary/50 shadow-xl hover:shadow-2xl relative overflow-hidden group"
               >
+                {/* Decor */}
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <div className="w-16 h-16 rounded-full bg-secondary blur-2xl" />
+                </div>
+
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <service.icon className="w-7 h-7 text-secondary" />
+                <div className="w-14 h-14 rounded-lg bg-white/10 flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors duration-300 relative z-10">
+                  <service.icon className="w-7 h-7 text-secondary group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-bold text-foreground mb-3 group-hover:text-secondary transition-colors flex items-center gap-2">
+                <h3 className="text-xl font-display font-bold text-white mb-3 flex items-center gap-2 relative z-10">
                   {service.title}
-                  <ArrowUpRight className="w-5 h-5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
+                  <ArrowUpRight className="w-5 h-5 text-secondary opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
+                <p className="text-white/70 leading-relaxed mb-6 relative z-10">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 relative z-10">
                   {service.features.map((feature) => (
                     <span
                       key={feature}
-                      className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium"
+                      className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs font-medium"
                     >
                       {feature}
                     </span>

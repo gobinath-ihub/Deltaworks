@@ -10,10 +10,10 @@ interface AnimatedSectionProps {
 
 const getVariants = (direction: string): Variants => {
   const directions = {
-    up: { y: 50, x: 0 },
-    down: { y: -50, x: 0 },
-    left: { x: 50, y: 0 },
-    right: { x: -50, y: 0 },
+    up: { y: 20, x: 0 },
+    down: { y: -20, x: 0 },
+    left: { x: 30, y: 0 },
+    right: { x: -30, y: 0 },
   };
 
   const initial = directions[direction as keyof typeof directions] || directions.up;
@@ -41,12 +41,12 @@ export const AnimatedSection = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-80px" }}
       variants={getVariants(direction)}
       transition={{
-        duration: 0.6,
+        duration: 0.8,
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.1, 0.25, 1.0], // cubic-bezier for premium feel
       }}
       className={className}
     >

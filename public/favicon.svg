@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#2E5C8A"/>
+  
+  <!-- Letter D with industrial style -->
+  <path d="M8 8h7c4.418 0 8 3.582 8 8s-3.582 8-8 8H8V8zm3 3v10h4c2.761 0 5-2.239 5-5s-2.239-5-5-5h-4z" fill="white"/>
+  
+  <!-- Accent line (Dutch red) -->
+  <rect x="8" y="25" width="16" height="2" fill="#AE1C28"/>
+</svg>

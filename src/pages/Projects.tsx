@@ -1,85 +1,67 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, ArrowRight, X } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 
-const categories = ["All", "Automotive", "Aerospace", "Medical", "Electronics", "Industrial"];
+const categories = ["All", "Computing", "Automotive", "Medical", "Industrial", "Telecom"];
 
 const projects = [
   {
     id: 1,
-    title: "Automotive Powertrain Components",
-    category: "Automotive",
-    client: "Major European OEM",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
-    description: "High-precision engine components including connecting rods, camshafts, and valve assemblies for a leading European automotive manufacturer.",
-    specs: ["±0.005mm tolerance", "100,000+ units/year", "IATF 16949 certified"],
+    title: "Enterprise Server Motherboard",
+    category: "Computing",
+    client: "Global Data Center Provider",
+    image: "https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=800&q=80",
+    description: "High-density multi-socket server motherboard designed for AI and cloud computing workloads.",
+    specs: ["14-layer PCB", "High-speed Signal Integrity", "IPC Class 3"],
   },
   {
     id: 2,
-    title: "Aerospace Landing Gear Assembly",
-    category: "Aerospace",
-    client: "Airbus Tier 1 Supplier",
-    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80",
-    description: "Critical safety components for commercial aircraft landing gear systems, manufactured to AS9100 aerospace standards with full traceability.",
-    specs: ["AS9100 certified", "Titanium & Inconel", "Full NDT testing"],
+    title: "Automotive ADAS Controller",
+    category: "Automotive",
+    client: "European EV Manufacturer",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    description: "Advanced Driver Assistance System (ADAS) control unit with redundant safety features.",
+    specs: ["IATF 16949", "AEC-Q100 Components", "Conformal Coating"],
   },
   {
     id: 3,
-    title: "Medical Device Housings",
+    title: "MRI RF Generator Module",
     category: "Medical",
-    client: "Global Medical Devices Company",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80",
-    description: "Cleanroom-manufactured aluminum and stainless steel enclosures for Class II and Class III medical diagnostic equipment.",
-    specs: ["ISO 13485 certified", "Cleanroom assembly", "FDA compliant"],
+    client: "Medical Imaging Leader",
+    image: "https://images.unsplash.com/photo-1581093588401-fbb0777e132c?auto=format&fit=crop&w=800&q=80",
+    description: "High-power RF signal generation module for next-generation MRI scanners.",
+    specs: ["ISO 13485", "High Voltage Safety", "Precision RF Testing"],
   },
   {
     id: 4,
-    title: "Semiconductor Equipment Parts",
-    category: "Electronics",
-    client: "ASML Partner",
+    title: "5G Base Station Transceiver",
+    category: "Telecom",
+    client: "Network Infrastructure Co.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    description: "Ultra-precision aluminum and ceramic components for chip manufacturing systems, requiring sub-micron tolerances and exceptional surface finish.",
-    specs: ["<0.001mm precision", "Ra 0.2 surface finish", "Ultra-clean packaging"],
+    description: "mmWave transceiver module for outdoor 5G small cell deployment.",
+    specs: ["Rogers PCB Material", "Thermal Management", "IP67 Enclosure"],
   },
   {
     id: 5,
-    title: "Industrial Robotics Arms",
+    title: "Industrial IoT Edge Gateway",
     category: "Industrial",
-    client: "Dutch Robotics Startup",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
-    description: "Complete manufacturing and assembly of lightweight aluminum robot arm segments with integrated cable routing and sensor mounting.",
-    specs: ["Complete assembly", "Integrated testing", "Rapid prototyping"],
+    client: "Factory Automation Firm",
+    image: "https://images.unsplash.com/photo-1558494949-ef2bb6db879c?auto=format&fit=crop&w=800&q=80",
+    description: "Ruggedized edge computing device for real-time factory data analytics.",
+    specs: ["Wide Temp Range", "Vibration Resistant", "Long Lifecycle"],
   },
   {
     id: 6,
-    title: "Electric Vehicle Battery Housings",
-    category: "Automotive",
-    client: "EV Manufacturer",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80",
-    description: "Precision-machined aluminum battery enclosures with integrated thermal management channels for next-generation electric vehicles.",
-    specs: ["Thermal simulation", "Leak testing", "Lightweight design"],
-  },
-  {
-    id: 7,
-    title: "Satellite Communication Components",
-    category: "Aerospace",
-    client: "Space Technology Company",
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80",
-    description: "High-frequency waveguide components and antenna assemblies for satellite communication systems with stringent weight and performance requirements.",
-    specs: ["Space-qualified", "Aluminum & Titanium", "Full environmental testing"],
-  },
-  {
-    id: 8,
-    title: "Surgical Instrument Sets",
-    category: "Medical",
-    client: "Orthopedic Devices Manufacturer",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=800&q=80",
-    description: "Complete surgical instrument sets for orthopedic procedures, including custom cases and sterile packaging.",
-    specs: ["Surgical grade steel", "Laser marking", "Sterile packaging"],
+    title: "Avionics Flight Control Unit",
+    category: "Industrial",
+    client: "Aerospace Supplier",
+    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80",
+    description: "Critical flight control computer with triple-redundant architecture.",
+    specs: ["AS9100 Rev D", "DO-254 Compliant", "Burn-in Testing"],
   },
 ];
 
@@ -87,8 +69,8 @@ const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
@@ -101,7 +83,7 @@ const Projects = () => {
           animate={{ opacity: 0.1 }}
           className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full bg-secondary blur-3xl"
         />
-        
+
         <div className="container-wide relative">
           <div className="max-w-4xl">
             <motion.span
@@ -117,8 +99,8 @@ const Projects = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6"
             >
-              Excellence in Every{" "}
-              <span className="text-gradient">Detail</span>
+              <span className="text-secondary">Engineering</span> the Future of{" "}
+              Electronics
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -126,8 +108,8 @@ const Projects = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-navy-200 leading-relaxed"
             >
-              Explore our portfolio of precision manufacturing projects across automotive, 
-              aerospace, medical, and electronics industries.
+              A showcase of our capabilities in high-performance electronics manufacturing
+              across computing, automotive, medical, and industrial sectors.
             </motion.p>
           </div>
         </div>
@@ -143,11 +125,10 @@ const Projects = () => {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all ${
-                    activeCategory === category
-                      ? "bg-secondary text-secondary-foreground shadow-md"
-                      : "bg-muted text-muted-foreground hover:bg-secondary/10 hover:text-secondary"
-                  }`}
+                  className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all ${activeCategory === category
+                    ? "bg-secondary text-secondary-foreground shadow-md"
+                    : "bg-muted text-muted-foreground hover:bg-secondary/10 hover:text-secondary"
+                    }`}
                 >
                   {category}
                 </button>
@@ -156,9 +137,9 @@ const Projects = () => {
           </AnimatedSection>
 
           {/* Projects Grid */}
-          <motion.div 
+          <motion.div
             layout
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 lg:gap-12"
           >
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
@@ -172,8 +153,9 @@ const Projects = () => {
                 >
                   <motion.div
                     whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                     onClick={() => setSelectedProject(project)}
-                    className="group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-secondary/30 transition-all"
+                    className="group cursor-pointer bg-primary rounded-xl overflow-hidden border border-primary/50 shadow-xl hover:shadow-2xl transition-all duration-300 relative"
                   >
                     {/* Image */}
                     <div className="relative aspect-[16/10] overflow-hidden">
@@ -182,23 +164,28 @@ const Projects = () => {
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
                       {/* Arrow */}
-                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-card/90 flex items-center justify-center opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                        <ArrowUpRight className="w-5 h-5 text-foreground" />
+                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                        <ArrowUpRight className="w-5 h-5 text-white" />
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-6">
-                      <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium mb-3">
+                    <div className="p-6 relative">
+                      {/* Decor */}
+                      <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                        <div className="w-16 h-16 rounded-full bg-secondary blur-2xl" />
+                      </div>
+
+                      <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs font-medium mb-3 relative z-10 border border-white/5">
                         {project.category}
                       </span>
-                      <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
+                      <h3 className="text-lg font-display font-bold text-white mb-2 group-hover:text-secondary transition-colors relative z-10">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
+                      <p className="text-sm text-white/70 line-clamp-2 relative z-10">
                         {project.description}
                       </p>
                     </div>
@@ -222,14 +209,14 @@ const Projects = () => {
           >
             {/* Backdrop */}
             <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
-            
+
             {/* Modal */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-card rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-auto"
+              className="relative bg-card rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-auto border border-border/60"
             >
               {/* Close Button */}
               <button
@@ -287,21 +274,21 @@ const Projects = () => {
       </AnimatePresence>
 
       {/* CTA */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-primary">
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                Have a similar project in mind?
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-4">
+                <span className="text-secondary">Ready</span> to work with us?
               </h2>
-              <p className="text-muted-foreground text-lg">
-                Let's discuss how DeltaWorks can bring your vision to life.
+              <p className="text-navy-200 text-lg">
+                Let's discuss how DeltaWorks can support your manufacturing needs.
               </p>
             </div>
             <Button asChild size="lg" className="bg-secondary hover:bg-copper-500">
               <Link to="/contact" className="flex items-center gap-2">
-                Get a Quote
-                <ArrowUpRight className="w-5 h-5" />
+                Get in Touch
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
           </div>

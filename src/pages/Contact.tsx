@@ -43,10 +43,10 @@ const Contact = () => {
 
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     toast({
       title: "Message sent!",
       description: "We'll get back to you within 24 hours.",
@@ -66,7 +66,7 @@ const Contact = () => {
           animate={{ opacity: 0.1 }}
           className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full bg-secondary blur-3xl"
         />
-        
+
         <div className="container-wide relative">
           <div className="max-w-4xl">
             <motion.span
@@ -82,8 +82,8 @@ const Contact = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6"
             >
-              Let's Build Something{" "}
-              <span className="text-gradient">Great Together</span>
+              <span className="text-secondary">Let's</span> Build Something{" "}
+              Great Together
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-navy-200 leading-relaxed"
             >
-              Ready to discuss your manufacturing needs? Our team is here to help 
+              Ready to discuss your electronics manufacturing project? Our team is here to help
               you bring your vision to life with precision and expertise.
             </motion.p>
           </div>
@@ -109,30 +109,39 @@ const Contact = () => {
                   Get in Touch
                 </h2>
               </AnimatedSection>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((item, index) => (
                   <AnimatedSection key={item.title} delay={index * 0.1}>
-                    <div className="flex gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <motion.div
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      className="flex gap-4 p-4 rounded-xl bg-primary border border-primary/50 hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
+                    >
+                      {/* Decor */}
+                      <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                        <div className="w-8 h-8 rounded-full bg-secondary blur-xl" />
+                      </div>
+
+                      <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 relative z-10">
                         <item.icon className="w-6 h-6 text-secondary" />
                       </div>
-                      <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">
+                      <div className="relative z-10">
+                        <h3 className="font-display font-semibold text-white mb-1">
                           {item.title}
                         </h3>
-                        <p className="text-muted-foreground whitespace-pre-line">
+                        <p className="text-white/70 whitespace-pre-line">
                           {item.content}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   </AnimatedSection>
                 ))}
               </div>
 
               {/* Map */}
               <AnimatedSection delay={0.4} className="mt-10">
-                <div className="rounded-2xl overflow-hidden h-64 bg-muted">
+                <div className="rounded-lg overflow-hidden h-64 bg-muted border border-border/60">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155959.35839366836!2d4.7633036!3d52.3547498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
                     width="100%"
@@ -150,91 +159,100 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <AnimatedSection direction="right">
-                <div className="bg-card rounded-2xl border border-border p-8 lg:p-10 shadow-sm">
-                  <h2 className="text-2xl font-display font-bold text-foreground mb-2">
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="bg-primary rounded-xl border border-primary/50 p-8 lg:p-10 shadow-xl relative overflow-hidden group"
+                >
+                  {/* Decor */}
+                  <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+                    <div className="w-32 h-32 rounded-full bg-secondary blur-3xl" />
+                  </div>
+
+                  <h2 className="text-2xl font-display font-bold text-white mb-2 relative z-10">
                     Request a Quote
                   </h2>
-                  <p className="text-muted-foreground mb-8">
+                  <p className="text-white/70 mb-8 relative z-10">
                     Fill out the form below and we'll get back to you within 24 hours.
                   </p>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name *</Label>
+                        <Label htmlFor="firstName" className="text-white/90">First Name *</Label>
                         <Input
                           id="firstName"
                           required
                           placeholder="John"
-                          className="h-12"
+                          className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name *</Label>
+                        <Label htmlFor="lastName" className="text-white/90">Last Name *</Label>
                         <Input
                           id="lastName"
                           required
                           placeholder="Doe"
-                          className="h-12"
+                          className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                         />
                       </div>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
+                        <Label htmlFor="email" className="text-white/90">Email Address *</Label>
                         <Input
                           id="email"
                           type="email"
                           required
                           placeholder="john@company.com"
-                          className="h-12"
+                          className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
+                        <Label htmlFor="phone" className="text-white/90">Phone Number</Label>
                         <Input
                           id="phone"
                           type="tel"
                           placeholder="+31 20 123 4567"
-                          className="h-12"
+                          className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
+                      <Label htmlFor="company" className="text-white/90">Company Name</Label>
                       <Input
                         id="company"
                         placeholder="Your Company BV"
-                        className="h-12"
+                        className="h-12 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Interest</Label>
+                      <Label htmlFor="service" className="text-white/90">Service Interest</Label>
                       <select
                         id="service"
-                        className="w-full h-12 px-4 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                        className="w-full h-12 px-4 rounded-md border border-white/10 bg-navy-800 text-white focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary"
                       >
                         <option value="">Select a service...</option>
-                        <option value="precision">Precision Manufacturing</option>
-                        <option value="supply-chain">Supply Chain Solutions</option>
-                        <option value="quality">Quality Assurance</option>
-                        <option value="engineering">Custom Engineering</option>
-                        <option value="optimization">Process Optimization</option>
-                        <option value="assembly">Assembly & Integration</option>
+                        <option value="pcb-assembly">PCB Assembly</option>
+                        <option value="sourcing">Component Sourcing</option>
+                        <option value="testing">Testing & QA</option>
+                        <option value="embedded">Embedded Design</option>
+                        <option value="box-build">Box Build</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Project Details *</Label>
+                      <Label htmlFor="message" className="text-white/90">Project Details *</Label>
                       <Textarea
                         id="message"
                         required
                         placeholder="Tell us about your project requirements, quantities, materials, and timeline..."
                         rows={5}
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-secondary focus:ring-secondary/20"
                       />
                     </div>
 
@@ -242,13 +260,13 @@ const Contact = () => {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting || isSubmitted}
-                      className="w-full bg-secondary hover:bg-copper-500 h-12"
+                      className="w-full bg-secondary hover:bg-copper-500 h-12 text-white"
                     >
                       {isSubmitting ? (
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                          className="w-5 h-5 border-2 border-secondary-foreground border-t-transparent rounded-full"
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                         />
                       ) : isSubmitted ? (
                         <span className="flex items-center gap-2">
@@ -263,7 +281,7 @@ const Contact = () => {
                       )}
                     </Button>
                   </form>
-                </div>
+                </motion.div>
               </AnimatedSection>
             </div>
           </div>
@@ -306,11 +324,16 @@ const Contact = () => {
               },
             ].map((faq, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
-                <div className="p-6 bg-card rounded-xl border border-border">
-                  <h3 className="font-display font-semibold text-foreground mb-2">
+                <div className="p-6 bg-primary rounded-xl border border-primary/50 shadow-md relative overflow-hidden group">
+                  {/* Decor */}
+                  <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                    <div className="w-12 h-12 rounded-full bg-secondary blur-xl" />
+                  </div>
+
+                  <h3 className="font-display font-semibold text-white mb-2 relative z-10">
                     {faq.q}
                   </h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
+                  <p className="text-white/70 relative z-10">{faq.a}</p>
                 </div>
               </AnimatedSection>
             ))}

@@ -6,28 +6,16 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Automotive Powertrain Components",
+    title: "High-Performance Server Blades",
+    category: "Computing",
+    image: "https://images.unsplash.com/photo-1526666923127-b2970f64b422?auto=format&fit=crop&w=800&q=80",
+    description: "Multi-socket server motherboards for enterprise data centers.",
+  },
+  {
+    title: "Automotive ECU Controllers",
     category: "Automotive",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
-    description: "Precision-machined engine components for a leading European automaker.",
-  },
-  {
-    title: "Aerospace Landing Gear Assembly",
-    category: "Aerospace",
-    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80",
-    description: "Critical safety components meeting AS9100 aerospace standards.",
-  },
-  {
-    title: "Medical Device Housings",
-    category: "Medical",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80",
-    description: "Cleanroom-manufactured enclosures for diagnostic equipment.",
-  },
-  {
-    title: "Semiconductor Equipment Parts",
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    description: "Ultra-precision components for chip manufacturing systems.",
+    image: "https://images.unsplash.com/photo-1519752594763-2633d8d4ea29?auto=format&fit=crop&w=800&q=80",
+    description: "Safety-critical engine control units with IPC Class 3 compliance.",
   },
 ];
 
@@ -45,7 +33,7 @@ export const ProjectsPreview = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-                Excellence in Every <span className="text-gradient">Detail</span>
+                <span className="text-secondary">Excellence</span> in Every Detail
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -74,37 +62,35 @@ export const ProjectsPreview = () => {
             >
               <Link
                 to="/projects"
-                className="group block relative rounded-2xl overflow-hidden bg-card"
+                className="group block relative rounded-lg overflow-hidden bg-card border border-border/60 shadow-md card-glow"
               >
                 {/* Image */}
                 <div className="aspect-[16/10] overflow-hidden">
-                  <motion.img
+                  <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300" />
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                   <span className="inline-block px-3 py-1 rounded-full bg-secondary/90 text-secondary-foreground text-xs font-medium mb-3">
                     {project.category}
                   </span>
-                  <h3 className="text-xl lg:text-2xl font-display font-bold text-primary-foreground mb-2 group-hover:text-secondary transition-colors">
+                  <h3 className="text-xl lg:text-2xl font-display font-bold text-primary-foreground mb-2 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-navy-200 text-sm lg:text-base opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <p className="text-navy-200 text-sm lg:text-base opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Arrow */}
-                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-secondary/20 backdrop-blur-sm flex items-center justify-center opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-secondary/20 backdrop-blur-sm flex items-center justify-center opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                   <ArrowUpRight className="w-5 h-5 text-primary-foreground" />
                 </div>
               </Link>

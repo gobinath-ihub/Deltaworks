@@ -39,7 +39,7 @@ export const TestimonialsSection = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
-              Trusted by Industry <span className="text-gradient">Leaders</span>
+              <span className="text-secondary">Trusted</span> by Industry Leaders
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
@@ -54,32 +54,37 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <AnimatedSection key={testimonial.author} delay={index * 0.15}>
               <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
-                className="h-full p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-lg hover:border-secondary/30 transition-all"
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="h-full p-8 bg-primary rounded-xl border border-primary/50 shadow-xl hover:shadow-2xl relative overflow-hidden group transition-all duration-300"
               >
+                {/* Decor */}
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <div className="w-16 h-16 rounded-full bg-secondary blur-2xl" />
+                </div>
+
                 {/* Quote Icon */}
-                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-300 relative z-10">
                   <Quote className="w-6 h-6 text-secondary" />
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-foreground leading-relaxed mb-8 text-lg">
+                <p className="text-white/90 leading-relaxed mb-8 text-lg relative z-10">
                   "{testimonial.quote}"
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 mt-auto">
+                <div className="flex items-center gap-4 mt-auto relative z-10">
                   <img
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-14 h-14 rounded-full object-cover"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-white/10"
                   />
                   <div>
-                    <div className="font-display font-semibold text-foreground">
+                    <div className="font-display font-semibold text-white">
                       {testimonial.author}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-white/60">
                       {testimonial.role}
                     </div>
                     <div className="text-sm text-secondary font-medium">

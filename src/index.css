@@ -1,129 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* DeltaWorks Manufacturing BV - Premium Industrial Design System */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Deep Navy & Warm Copper */
-    --background: 210 20% 98%;
-    --foreground: 220 30% 12%;
+    /* Core Brand Colors - Industrial Theme */
+    --background: 220 15% 96%;
+    --foreground: 217 62% 34%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 12%;
+    /* Industrial Steel Cards */
+    --card: 0 0% 99%;
+    --card-foreground: 217 62% 34%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 12%;
+    --popover: 220 15% 98%;
+    --popover-foreground: 217 62% 34%;
 
-    /* Deep Navy - Trust & Precision */
-    --primary: 220 45% 15%;
-    --primary-foreground: 210 20% 98%;
+    /* Dutch Blue - Primary */
+    --primary: 217 62% 34%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Warm Copper - Innovation & Energy */
-    --secondary: 25 80% 55%;
+    /* Red - Secondary/Accent */
+    --secondary: 0 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Cool Grays - Industrial Sophistication */
-    --muted: 210 15% 94%;
-    --muted-foreground: 220 10% 45%;
+    /* Industrial Grays */
+    --muted: 220 15% 93%;
+    --muted-foreground: 217 15% 45%;
 
-    --accent: 25 80% 55%;
+    --accent: 0 100% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 220 45% 15%;
+    /* Soft Industrial Borders */
+    --border: 220 15% 85%;
+    --input: 220 15% 90%;
+    --ring: 217 62% 34%;
 
     --radius: 0.5rem;
 
-    /* Custom Design Tokens */
-    --navy-50: 220 45% 96%;
-    --navy-100: 220 40% 90%;
-    --navy-200: 220 38% 80%;
-    --navy-300: 220 35% 65%;
-    --navy-400: 220 40% 45%;
-    --navy-500: 220 45% 30%;
-    --navy-600: 220 45% 20%;
-    --navy-700: 220 45% 15%;
-    --navy-800: 220 50% 10%;
-    --navy-900: 220 55% 6%;
+    /* Dutch Blue Variants */
+    --navy-50: 217 62% 97%;
+    --navy-100: 217 62% 92%;
+    --navy-200: 217 62% 82%;
+    --navy-300: 217 62% 67%;
+    --navy-400: 217 62% 50%;
+    --navy-500: 217 62% 34%;
+    --navy-600: 217 70% 28%;
+    --navy-700: 217 75% 23%;
+    --navy-800: 217 80% 18%;
+    --navy-900: 217 85% 13%;
 
-    --copper-50: 25 100% 97%;
-    --copper-100: 25 95% 90%;
-    --copper-200: 25 90% 80%;
-    --copper-300: 25 85% 65%;
-    --copper-400: 25 80% 55%;
-    --copper-500: 25 75% 45%;
-    --copper-600: 25 70% 35%;
+    /* Red Variants */
+    --copper-50: 0 30% 98%;
+    --copper-100: 0 100% 90%;
+    --copper-200: 0 100% 80%;
+    --copper-300: 0 100% 65%;
+    --copper-400: 0 100% 50%;
+    --copper-500: 0 100% 50%;
+    --copper-600: 0 100% 40%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 45% 15%) 0%, hsl(220 50% 8%) 100%);
-    --gradient-copper: linear-gradient(135deg, hsl(25 80% 55%) 0%, hsl(25 75% 45%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 15% 94%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
+    /* Gradients - Industrial Subtle */
+    --gradient-hero: linear-gradient(135deg, hsl(217 62% 34%) 0%, hsl(217 75% 23%) 100%);
+    --gradient-copper: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(0 100% 40%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 96%) 0%, hsl(220 15% 93%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 15% 98%) 0%, hsl(220 15% 96%) 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 30% 12% / 0.03);
-    --shadow-md: 0 4px 6px -1px hsl(220 30% 12% / 0.05), 0 2px 4px -2px hsl(220 30% 12% / 0.05);
-    --shadow-lg: 0 10px 15px -3px hsl(220 30% 12% / 0.08), 0 4px 6px -4px hsl(220 30% 12% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(220 30% 12% / 0.1), 0 8px 10px -6px hsl(220 30% 12% / 0.08);
-    --shadow-glow: 0 0 40px hsl(25 80% 55% / 0.2);
-    --shadow-card-hover: 0 25px 50px -12px hsl(220 30% 12% / 0.15);
+    /* Premium Industrial Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 8px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 8px 16px -4px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 16px 32px -8px rgba(0, 0, 0, 0.1), 0 8px 12px -4px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 12px 24px -6px rgba(0, 0, 0, 0.12), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 220 45% 15%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 210 15% 94%;
-    --sidebar-accent-foreground: 220 45% 15%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 25 80% 55%;
+    --sidebar-background: 220 15% 96%;
+    --sidebar-foreground: 217 62% 34%;
+    --sidebar-primary: 217 62% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 93%;
+    --sidebar-accent-foreground: 217 62% 34%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 0 100% 50%;
   }
 
   .dark {
-    --background: 220 55% 6%;
-    --foreground: 210 20% 98%;
+    --background: 217 85% 13%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 50% 10%;
-    --card-foreground: 210 20% 98%;
+    --card: 217 80% 18%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 50% 10%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 217 80% 18%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 20% 98%;
-    --primary-foreground: 220 45% 15%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 217 62% 34%;
 
-    --secondary: 25 80% 55%;
+    --secondary: 356 72% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 45% 15%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 217 70% 28%;
+    --muted-foreground: 217 20% 75%;
 
-    --accent: 25 80% 55%;
+    --accent: 356 72% 40%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 356 72% 40%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 40% 18%;
-    --input: 220 40% 18%;
-    --ring: 25 80% 55%;
+    --border: 217 70% 28%;
+    --input: 217 70% 28%;
+    --ring: 356 72% 40%;
 
-    --sidebar-background: 220 55% 6%;
-    --sidebar-foreground: 210 15% 85%;
-    --sidebar-primary: 25 80% 55%;
+    --sidebar-background: 217 85% 13%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 356 72% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 45% 12%;
-    --sidebar-accent-foreground: 210 15% 85%;
-    --sidebar-border: 220 40% 15%;
-    --sidebar-ring: 25 80% 55%;
+    --sidebar-accent: 217 75% 23%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 70% 28%;
+    --sidebar-ring: 356 72% 40%;
   }
 }
 
@@ -140,12 +142,18 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold tracking-tight;
   }
 }
 
 @layer components {
+
   /* Hero Section Styles */
   .hero-gradient {
     background: var(--gradient-hero);
@@ -157,7 +165,7 @@
 
   /* Industrial Grid Pattern Overlay */
   .industrial-grid {
-    background-image: 
+    background-image:
       linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -167,7 +175,7 @@
   .animated-underline {
     position: relative;
   }
-  
+
   .animated-underline::after {
     content: '';
     position: absolute;
@@ -178,19 +186,19 @@
     background: hsl(var(--secondary));
     transition: width 0.3s ease-out;
   }
-  
+
   .animated-underline:hover::after {
     width: 100%;
   }
 
-  /* Card Glow Effect */
+  /* Premium Industrial Card Hover */
   .card-glow {
-    transition: all 0.3s ease-out;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .card-glow:hover {
-    box-shadow: var(--shadow-card-hover), var(--shadow-glow);
-    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px hsl(0 100% 50% / 0.08);
+    transform: translateY(-4px) scale(1.01);
   }
 
   /* Text Gradient */
@@ -208,11 +216,12 @@
 
   /* Container Max Width */
   .container-wide {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20;
   }
 }
 
 @layer utilities {
+
   /* Smooth Reveal Animation */
   .reveal-up {
     opacity: 0;

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
   ArrowUpRight,
   ChevronRight
 } from "lucide-react";
@@ -19,10 +19,10 @@ const footerLinks = {
     { label: "Careers", href: "/contact" },
   ],
   services: [
-    { label: "Precision Manufacturing", href: "/services" },
-    { label: "Supply Chain Solutions", href: "/services" },
-    { label: "Quality Assurance", href: "/services" },
-    { label: "Custom Engineering", href: "/services" },
+    { label: "PCB Assembly", href: "/services" },
+    { label: "Component Sourcing", href: "/services" },
+    { label: "Testing & Validation", href: "/services" },
+    { label: "Embedded Design", href: "/services" },
   ],
   support: [
     { label: "Contact Us", href: "/contact" },
@@ -44,54 +44,27 @@ export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* CTA Section */}
-      <div className="border-b border-navy-600">
-        <div className="container-wide py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row items-center justify-between gap-8"
-          >
-            <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
-                Ready to optimize your manufacturing?
-              </h2>
-              <p className="text-navy-200 text-lg max-w-xl">
-                Let's discuss how DeltaWorks can transform your production processes.
-              </p>
-            </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-secondary hover:bg-copper-500 text-secondary-foreground shadow-lg hover:shadow-xl transition-all group"
-            >
-              <Link to="/contact" className="flex items-center gap-2">
-                Start Your Project
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </div>
+
 
       {/* Main Footer */}
       <div className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
-                <span className="text-secondary-foreground font-display font-bold text-xl">D</span>
-              </div>
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <img
+                src="/deltaworks-logo.png"
+                alt="DeltaWorks Manufacturing BV"
+                className="h-16 w-auto object-contain bg-white rounded-lg p-2"
+              />
               <div className="flex flex-col">
-                <span className="font-display font-bold text-xl">DeltaWorks</span>
-                <span className="text-xs tracking-wider uppercase text-navy-300">Manufacturing BV</span>
+                <span className="font-display font-bold text-2xl leading-none text-white tracking-tight">DeltaWorks</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-secondary leading-none mt-1">Manufacturing BV</span>
               </div>
             </Link>
             <p className="text-navy-200 mb-6 max-w-sm leading-relaxed">
-              Precision engineering and manufacturing excellence since 1995. Delivering innovative 
-              solutions for Europe's leading industries.
+              Leading European electronics manufacturing partner. Specialized in PCB assembly,
+              embedded systems, and computer hardware for enterprise applications.
             </p>
             <div className="flex flex-col gap-3">
               {contactInfo.map((item, index) => (
