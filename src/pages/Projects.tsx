@@ -27,15 +27,7 @@ const projects = [
     description: "Advanced Driver Assistance System (ADAS) control unit with redundant safety features.",
     specs: ["IATF 16949", "AEC-Q100 Components", "Conformal Coating"],
   },
-  {
-    id: 3,
-    title: "MRI RF Generator Module",
-    category: "Medical",
-    client: "Medical Imaging Leader",
-    image: "https://images.unsplash.com/photo-1581093588401-fbb0777e132c?auto=format&fit=crop&w=800&q=80",
-    description: "High-power RF signal generation module for next-generation MRI scanners.",
-    specs: ["ISO 13485", "High Voltage Safety", "Precision RF Testing"],
-  },
+
   {
     id: 4,
     title: "5G Base Station Transceiver",
@@ -50,19 +42,11 @@ const projects = [
     title: "Industrial IoT Edge Gateway",
     category: "Industrial",
     client: "Factory Automation Firm",
-    image: "https://images.unsplash.com/photo-1558494949-ef2bb6db879c?auto=format&fit=crop&w=800&q=80",
+    image: "/industrial-iot-gateway.png",
     description: "Ruggedized edge computing device for real-time factory data analytics.",
     specs: ["Wide Temp Range", "Vibration Resistant", "Long Lifecycle"],
   },
-  {
-    id: 6,
-    title: "Avionics Flight Control Unit",
-    category: "Industrial",
-    client: "Aerospace Supplier",
-    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80",
-    description: "Critical flight control computer with triple-redundant architecture.",
-    specs: ["AS9100 Rev D", "DO-254 Compliant", "Burn-in Testing"],
-  },
+
 ];
 
 const Projects = () => {

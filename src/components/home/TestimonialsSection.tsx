@@ -7,21 +7,21 @@ const testimonials = [
     quote: "DeltaWorks has been our trusted manufacturing partner for over a decade. Their precision and reliability are unmatched in the industry.",
     author: "Hans van der Berg",
     role: "VP Operations",
-    company: "AutoTech Europe",
+    company: "",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
   },
   {
     quote: "The quality of components we receive consistently exceeds our specifications. DeltaWorks truly understands aerospace-grade manufacturing.",
     author: "Marie Dubois",
     role: "Quality Director",
-    company: "AeroSystems NL",
+    company: "",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
   },
   {
     quote: "When we needed to scale production 10x in 3 months, DeltaWorks delivered. Their flexibility and expertise made the impossible possible.",
     author: "Stefan Mueller",
     role: "CEO",
-    company: "MedTech Innovations",
+    company: "",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
   },
 ];
@@ -75,21 +75,9 @@ export const TestimonialsSection = () => {
 
                 {/* Author */}
                 <div className="flex items-center gap-4 mt-auto relative z-10">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-white/10"
-                  />
-                  <div>
-                    <div className="font-display font-semibold text-white">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-sm text-white/60">
-                      {testimonial.role}
-                    </div>
-                    <div className="text-sm text-navy-300 font-medium">
-                      {testimonial.company}
-                    </div>
+                  <div className="w-10 h-1 rounded-full bg-secondary/50" />
+                  <div className="text-sm text-navy-300 font-medium">
+                    {testimonial.company}
                   </div>
                 </div>
               </motion.div>
