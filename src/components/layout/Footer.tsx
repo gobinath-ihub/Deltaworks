@@ -59,7 +59,7 @@ export const Footer = () => {
               />
               <div className="flex flex-col">
                 <span className="font-display font-bold text-2xl leading-none text-white tracking-tight">DeltaWorks</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-secondary leading-none mt-1">Manufacturing BV</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-navy-200 leading-none mt-1">Manufacturing BV</span>
               </div>
             </Link>
             <p className="text-navy-200 mb-6 max-w-sm leading-relaxed">
@@ -68,7 +68,7 @@ export const Footer = () => {
             </p>
             <div className="flex flex-col gap-3">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 text-navy-200 hover:text-secondary transition-colors">
+                <div key={index} className="flex items-center gap-3 text-navy-200 hover:text-white transition-colors">
                   <item.icon className="w-5 h-5" />
                   <span className="text-sm">{item.text}</span>
                 </div>
@@ -84,7 +84,7 @@ export const Footer = () => {
                 <li key={link.href + link.label}>
                   <Link
                     to={link.href}
-                    className="text-navy-200 hover:text-secondary transition-colors text-sm flex items-center gap-1 group"
+                    className="text-navy-200 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.label}
@@ -101,7 +101,7 @@ export const Footer = () => {
                 <li key={link.href + link.label}>
                   <Link
                     to={link.href}
-                    className="text-navy-200 hover:text-secondary transition-colors text-sm flex items-center gap-1 group"
+                    className="text-navy-200 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.label}
@@ -118,7 +118,7 @@ export const Footer = () => {
                 <li key={link.href + link.label}>
                   <Link
                     to={link.href}
-                    className="text-navy-200 hover:text-secondary transition-colors text-sm flex items-center gap-1 group"
+                    className="text-navy-200 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.label}
@@ -143,7 +143,7 @@ export const Footer = () => {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-navy-600 hover:bg-secondary flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-full bg-navy-600 hover:bg-white hover:text-primary flex items-center justify-center transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -152,15 +152,15 @@ export const Footer = () => {
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-navy-600 hover:bg-secondary flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-full bg-navy-600 hover:bg-white hover:text-primary flex items-center justify-center transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
               </div>
               <div className="flex items-center gap-4 text-sm text-navy-300">
-                <Link to="/contact" className="hover:text-secondary transition-colors">Privacy</Link>
-                <Link to="/contact" className="hover:text-secondary transition-colors">Terms</Link>
+                <Link to="/contact" className="hover:text-white transition-colors">Privacy</Link>
+                <Link to="/contact" className="hover:text-white transition-colors">Terms</Link>
               </div>
             </div>
           </div>

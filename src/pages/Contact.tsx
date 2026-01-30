@@ -72,7 +72,7 @@ const Contact = () => {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-copper-300 text-sm font-medium mb-6"
+              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-navy-200 text-sm font-medium mb-6"
             >
               Contact Us
             </motion.span>
@@ -82,7 +82,7 @@ const Contact = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6"
             >
-              <span className="text-secondary">Let's</span> Build Something{" "}
+              <span className="text-navy-300">Let's</span> Build Something{" "}
               Great Together
             </motion.h1>
             <motion.p
@@ -99,7 +99,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-background">
+      <section className="pt-20 pb-8 md:pt-28 md:pb-12 lg:pt-32 lg:pb-16 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Contact Info */}
@@ -289,11 +289,11 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-muted/30">
+      <section className="pt-8 pb-20 md:pt-12 md:pb-28 lg:pt-16 lg:pb-32 bg-muted/30">
         <div className="container-wide">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <AnimatedSection>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 FAQs
               </span>
             </AnimatedSection>

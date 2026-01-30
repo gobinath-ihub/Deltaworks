@@ -27,13 +27,13 @@ export const ProjectsPreview = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
             <AnimatedSection>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 Featured Projects
               </span>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-                <span className="text-secondary">Excellence</span> in Every Detail
+                <span className="text-navy-300">Excellence</span> in Every Detail
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>

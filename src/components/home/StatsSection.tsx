@@ -30,7 +30,7 @@ export const StatsSection = () => {
                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 className="text-center p-6 rounded-lg hover:bg-white/5 transition-colors"
               >
-                <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-secondary mb-4">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-navy-300 mb-4">
                   <CounterAnimation end={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-lg font-semibold text-white/90 mb-3 tracking-wide">

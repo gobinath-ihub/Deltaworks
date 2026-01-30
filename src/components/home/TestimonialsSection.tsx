@@ -33,13 +33,13 @@ export const TestimonialsSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Client Testimonials
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
-              <span className="text-secondary">Trusted</span> by Industry Leaders
+              <span className="text-primary">Trusted</span> by Industry Leaders
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
@@ -65,7 +65,7 @@ export const TestimonialsSection = () => {
 
                 {/* Quote Icon */}
                 <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-300 relative z-10">
-                  <Quote className="w-6 h-6 text-secondary" />
+                  <Quote className="w-6 h-6 text-white" />
                 </div>
 
                 {/* Quote Text */}
@@ -87,7 +87,7 @@ export const TestimonialsSection = () => {
                     <div className="text-sm text-white/60">
                       {testimonial.role}
                     </div>
-                    <div className="text-sm text-secondary font-medium">
+                    <div className="text-sm text-navy-300 font-medium">
                       {testimonial.company}
                     </div>
                   </div>

@@ -89,7 +89,7 @@ const Projects = () => {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-copper-300 text-sm font-medium mb-6"
+              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-navy-200 text-sm font-medium mb-6"
             >
               Our Portfolio
             </motion.span>
@@ -99,7 +99,7 @@ const Projects = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6"
             >
-              <span className="text-secondary">Engineering</span> the Future of{" "}
+              <span className="text-navy-300">Engineering</span> the Future of{" "}
               Electronics
             </motion.h1>
             <motion.p
@@ -279,7 +279,7 @@ const Projects = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-4">
-                <span className="text-secondary">Ready</span> to work with us?
+                <span className="text-navy-300">Ready</span> to work with us?
               </h2>
               <p className="text-navy-200 text-lg">
                 Let's discuss how DeltaWorks can support your manufacturing needs.

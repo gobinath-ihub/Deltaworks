@@ -73,13 +73,13 @@ export const ServicesSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Our Services
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
-              <span className="text-secondary">Comprehensive</span> Manufacturing{" "}
+              <span className="text-primary">Comprehensive</span> Manufacturing{" "}
               Solutions
             </h2>
           </AnimatedSection>

@@ -30,14 +30,14 @@ export const CTASection = () => {
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-copper-300 text-sm font-medium mb-8">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-navy-200 text-sm font-medium mb-8">
               Ready to Get Started?
             </span>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary-foreground mb-6 leading-tight">
-              <span className="text-secondary">Transform</span> Your Manufacturing
+              <span className="text-navy-300">Transform</span> Your Manufacturing
               <br className="hidden md:block" />
               With DeltaWorks
             </h2>

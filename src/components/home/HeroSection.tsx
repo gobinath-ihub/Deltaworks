@@ -67,7 +67,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-primary-foreground leading-tight mb-6"
             >
-              <span className="text-secondary">Precision</span>{" "}
+              <span className="text-navy-300">Precision</span>{" "}
               Electronics Manufacturing{" "}
               for Advanced Computing
             </motion.h1>
@@ -130,7 +130,7 @@ export const HeroSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10 text-center">
-                    <div className="text-3xl lg:text-4xl font-display font-bold text-[#D32F2F] mb-2 drop-shadow-sm">
+                    <div className="text-3xl lg:text-4xl font-display font-bold text-navy-300 mb-2 drop-shadow-sm">
                       <CounterAnimation end={stat.value} suffix={stat.suffix} />
                     </div>
                     <div className="text-sm font-medium text-navy-200 tracking-wide uppercase opacity-90">

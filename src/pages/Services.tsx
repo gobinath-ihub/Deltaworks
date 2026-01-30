@@ -124,7 +124,7 @@ const Services = () => {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-copper-300 text-sm font-medium mb-6"
+              className="inline-block px-4 py-1.5 rounded-full bg-navy-700 text-navy-200 text-sm font-medium mb-6"
             >
               Our Services
             </motion.span>
@@ -134,7 +134,7 @@ const Services = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6"
             >
-              <span className="text-secondary">Advanced</span> Electronics{" "}
+              <span className="text-navy-300">Advanced</span> Electronics{" "}
               Manufacturing
             </motion.h1>
             <motion.p
@@ -168,7 +168,7 @@ const Services = () => {
                         <service.icon className="w-7 h-7 text-secondary" />
                       </div>
                       <div>
-                        <span className="text-secondary font-medium text-sm">
+                        <span className="text-primary font-medium text-sm">
                           {service.subtitle}
                         </span>
                         <h2 className="text-3xl font-display font-bold text-foreground">
@@ -225,7 +225,7 @@ const Services = () => {
         <div className="container-wide">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <AnimatedSection>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 Capabilities
               </span>
             </AnimatedSection>
